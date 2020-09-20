@@ -1,6 +1,11 @@
 const getItemsString = function (array) {
-  "use strict";
-  // Write code under this line
+  let result = " ";
+  for (let i = 0; i < array.length; i += 1) {
+    const item = array[i];
+    const number = [i + 1];
+    result = `${number} - ${item}`;
+  }
+  return result;
 };
 
 console.log(getItemsString(["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"]));
@@ -14,7 +19,7 @@ console.log(getItemsString(["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"]));
 '
 */
 
-//console.log(getItemsString([5, 10, 15]));
+console.log(getItemsString([5, 10, 15]));
 /*
 '1 - 5
 2 - 10
