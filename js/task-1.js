@@ -1,4 +1,4 @@
-const getItemsString = function (array) {
+const getItemsString = function (array = " ") {
   let result = " ";
   for (let i = 0; i < array.length; i += 1) {
     const item = array[i];
