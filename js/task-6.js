@@ -1,5 +1,5 @@
 const mapArray = function (array) {
-  const numbers = new Array(array.length);
+  const numbers = new Array(array);
   for (let i = 0; i < array.length; i += 1) {}
 
   return numbers;
