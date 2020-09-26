@@ -1,8 +1,20 @@
+// Решение 1
+// const mapArray = function (array) {
+//   const numbers = new Array(array.length);
+
+//   for (let i = 0; i < array.length; i += 1) {
+//     numbers.splice(i, 1, array[i] * 10);
+//   }
+
+//   return numbers;
+// };
+
+// Решение 2
 const mapArray = function (array) {
   const numbers = new Array(array.length);
 
   for (let i = 0; i < array.length; i += 1) {
-    numbers.splice(i, 1, array[i] * 10);
+    numbers[i] = array[i] * 10;
   }
 
   return numbers;
@@ -11,5 +23,5 @@ const mapArray = function (array) {
 console.log(mapArray([-2, 0, 2]));
 // [-20, 0, 20]
 
-console.log(mapArray([-2.5, 0, 2.5]));
+// console.log(mapArray([-2.5, 0, 2.5]));
 // [-25, 0, 25]
