@@ -1,11 +1,15 @@
 const filterArray = function (array) {
   const numbers = [];
-  numbers.push(array);
+
+  // Перебрать массив функции
   for (let i = 0; i < array.length; i += 1) {
-    if (Number.isFinite(array[i]) === true) {
-      numbers[i] = array[i];
+    // После перебора проверить, если элемент массива конечное чило добавить его в пустой массив
+    if (Number.isFinite(array[i])) {
+      numbers.push(array[i]);
     }
   }
+
+  // Вернуть значение массива
   return numbers;
 };
 
@@ -18,7 +22,7 @@ console.log(filterArray([1, NaN, Infinity]));
 console.log(filterArray([0, -0, 100, "100"]));
 // [0, 0, 100]
 
-// console.log(filterArray([undefined, false, null, [], 1]));
+console.log(filterArray([undefined, false, null, [], 1]));
 // [1]
 
 // console.log(filterArray([{}, () => {}, 2]));
