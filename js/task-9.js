@@ -1,18 +1,24 @@
-const isLoginValid = function (login, min = 4, max = 16) {};
-
-const isLoginUnique = function (allLogins, login) {};
-
-const addLogin = function (allLogins, login) {
-  "use strict";
-  const SUCCESS = "Логин успешно добавлен!";
-  const REFUSAL = "Такой логин уже используется!";
-  const ERROR = "Ошибка! Логин должен быть размером от 4 до 16 символов";
-  let message;
+const isLoginValid = function (login, min = 4, max = 16) {
+  if (login.length < min || login.length > max) {
+    return false;
+  } else {
+    return true;
+  }
 };
 
-const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
+// const isLoginUnique = function (allLogins, login) {};
 
-// console.log(addLogin(logins, 'Ajax'));
+// const addLogin = function (allLogins, login) {
+//   "use strict";
+//   const SUCCESS = "Логин успешно добавлен!";
+//   const REFUSAL = "Такой логин уже используется!";
+//   const ERROR = "Ошибка! Логин должен быть размером от 4 до 16 символов";
+//   let message;
+// };
+
+// const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
+
+// console.log(addLogin(logins, "Ajax"));
 // 'Логин успешно добавлен!'
 
 // console.log(addLogin(logins, 'robotGoogles'));
