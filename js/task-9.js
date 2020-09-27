@@ -16,7 +16,7 @@ const addLogin = function (allLogins, login) {
     message = ERROR;
   } else if (isLoginUnique(allLogins, login) !== true) {
     message = REFUSAL;
-  } else if (isLoginValid(login) || isLoginUnique(allLogins, login) === true) {
+  } else if (isLoginValid(login) && isLoginUnique(allLogins, login) === true) {
     allLogins.push(login);
   }
   return message;
