@@ -1,9 +1,5 @@
 const isLoginValid = function (login, min = 4, max = 16) {
-  if (login.length < min || login.length > max) {
-    return false;
-  } else {
-    return true;
-  }
+  return login.length < min || login.length > max ? false : true;
 };
 
 // const isLoginUnique = function (allLogins, login) {};
