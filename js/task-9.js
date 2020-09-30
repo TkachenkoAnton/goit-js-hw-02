@@ -1,11 +1,16 @@
 const isLoginValid = function (login, min = 4, max = 16) {
+  // Вернуть логин если количество его символов больше или равняется значению минимальной длинны и меньше или равняеться максимальной длинне
   return login.length >= min && login.length <= max;
 };
 
+// Вернуть falce если login уже есть в массиве allLogins и вернуть true если login нет в массиве allLogins
 const isLoginUnique = function (allLogins, login) {
   return allLogins.includes(login) ? false : true;
 };
 
+// Проверить проходит ли login валидацию на количество символов, если его в массиве нет вернуть сообщение ERROR.
+// После чего валидация на наличие login в массиве alllogins, если он в массиве есть вернуть сообщение REFUSAL.
+// Когда login прошел 2 валидации добавить его к массиву allLogins и вернуть сообщение SUCCESS.
 const addLogin = function (allLogins, login) {
   const SUCCESS = "Логин успешно добавлен!";
   const REFUSAL = "Такой логин уже используется!";
