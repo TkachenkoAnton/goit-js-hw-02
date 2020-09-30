@@ -1,5 +1,5 @@
 const isLoginValid = function (login, min = 4, max = 16) {
-  return login.length < min || login.length > max ? false : true;
+  return login.length >= min && login.length <= max;
 };
 
 const isLoginUnique = function (allLogins, login) {
@@ -10,16 +10,16 @@ const addLogin = function (allLogins, login) {
   const SUCCESS = "Логин успешно добавлен!";
   const REFUSAL = "Такой логин уже используется!";
   const ERROR = "Ошибка! Логин должен быть размером от 4 до 16 символов";
-  let message = SUCCESS;
+  let message;
 
-  if (isLoginValid(login) !== true) {
-    message = ERROR;
-  } else if (isLoginUnique(allLogins, login) !== true) {
-    message = REFUSAL;
-  } else if (isLoginValid(login) && isLoginUnique(allLogins, login) === true) {
-    allLogins.push(login);
+  if (!isLoginValid(login)) {
+    return (message = ERROR);
   }
-  return message;
+  if (!isLoginUnique(allLogins, login)) {
+    return (message = REFUSAL);
+  }
+  allLogins.push(login);
+  return (message = SUCCESS);
 };
 
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
